@@ -1,0 +1,38 @@
+USERS  (Also see Devise gem for authentication and more - http://devise.plataformatec.com.br/ )
+        has_one ACCOUNT has_many CATEGORY_FILTERS has_one COMMISSION_INFO has_many MODULES
+        has_one GALLERY_VIEWS has_many ITEM_VIEWS has_one AOTD_TOKENS has_one SESSION
+id                PI
+username          Index
+password
+email_address     Index
+created_at
+updated_at
+
+ACCOUNTS  belongs_to USERS  
+id                PI
+user_id           FK(Users)/Index
+first_name                          NULL
+last_name                           NULL
+status            Index                   enum('Pending', 'Active', 'Suspended', 'Disabled')
+reinstate_on      Index             NULL
+alias                               NULL
+biography                           NULL  (text)
+birthdate
+birthdate_mode                            enum('Full','No Year','Hidden')
+webpage_name                        NULL
+webpage_url                         NULL
+blog_name                           NULL
+blog_url                            NULL
+aim                                 NULL
+yahoo                               NULL
+gtalk                               NULL
+skype                               NULL
+state                               NULL
+country                             NULL
+is_public
+referred_by     FK(Users)
+tier_2_expiration_date              NULL
+tier_3_expiration_date              NULL
+delete_on                           NULL
+created_at
+updated_at
