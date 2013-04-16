@@ -3,13 +3,26 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 gem 'bootstrap-sass', '~> 2.1'
 gem 'bcrypt-ruby', '~> 3.0.1'
+gem 'faker', '~> 1.0.1'
+gem 'will_paginate', '3.0.3'
+gem 'bootstrap-will_paginate', '0.0.6'
+gem 'enum_column3'
+
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development, :test do
-  gem 'sqlite3'
+  gem 'mysql'
+  #gem 'sqlite3'
   gem 'rspec-rails', '~> 2.11.0'
+  gem 'guard-rspec', '~> 1.2.1'
+  gem 'factory_girl_rails'
+  gem 'guard'
+  gem 'guard-bundler'
+  gem 'spork', '~> 0.9.2'
+  gem 'guard-spork', :git => 'git://github.com/guard/guard-spork.git'
+  gem 'sys-proctable', :git => 'git://github.com/djberg96/sys-proctable.git'
 end
 
 group :production do
@@ -33,6 +46,13 @@ gem 'jquery-rails'
 
 group :development do
   gem 'annotate', '2.5.0'
+end
+
+group :test do
+  gem 'capybara', '~> 1.1.2'
+  gem 'rb-fsevent', '~> 0.9.1', :require => false
+  gem 'growl', '~> 1.0.3'
+  gem 'rb-kqueue', '~> 0.2'
 end
 
 # To use ActiveModel has_secure_password
